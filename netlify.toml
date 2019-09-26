@@ -1,5 +1,5 @@
 # example netlify.toml
 [build]
   command = "yarn build"
-  functions = "functions"
+  functions = "functions-build"
   publish = "dist/my-assets-overview"
