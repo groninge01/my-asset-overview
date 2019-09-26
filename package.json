@@ -8,7 +8,7 @@
     "prezip": "rm -rf functions-build && mkdir functions-build",
     "zip": "cd functions/bnd && yarn && chmod -R 777 node_modules && zip -r bnd.zip *",
     "postzip": "mv functions/bnd/bnd.zip functions-build",
-    "prebuild": "yarn zip && netlify functions:build --src functions/meesman",
+    "prebuild": "yarn zip",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
