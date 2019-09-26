@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
+    "prezip": "rm -rf functions-build && mkdir functions-build",
+    "zip": "cd functions/bnd && npm install && chmod -R 777 node_modules && zip -r bnd.zip *",
+    "postzip": "mv functions/bnd/bnd.zip functions-build",
+    "prebuild": "npm run zip",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -16,9 +20,11 @@
     "@angular/compiler": "~8.2.7",
     "@angular/core": "~8.2.7",
     "@angular/forms": "~8.2.7",
+    "@angular/material": "^8.2.0",
     "@angular/platform-browser": "~8.2.7",
     "@angular/platform-browser-dynamic": "~8.2.7",
     "@angular/router": "~8.2.7",
+    "dotenv": "^8.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
