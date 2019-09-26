@@ -5,6 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --aot",
+    "clean": "rm -rf functions-build && mkdir functions-build",
+    "zip": "cd functions/bnd && npm install && zip -r bnd.zip *",
+    "postzip": "mv functions/bnd/bnd.zip functions-build",
+    "move-other-func": "cp functions/meesman.js functions-build",
+    "prebuild": "npm run clean && npm run zip && npm run move-other-func",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
