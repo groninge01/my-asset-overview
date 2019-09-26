@@ -5,10 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --aot",
-    "prezip": "rm -rf functions-build && mkdir functions-build",
-    "zip": "cd functions/bnd && yarn && chmod -R 777 node_modules && zip -r bnd.zip *",
-    "postzip": "mv functions/bnd/bnd.zip functions-build",
-    "prebuild": "yarn zip",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
